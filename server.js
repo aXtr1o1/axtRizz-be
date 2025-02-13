@@ -6,7 +6,7 @@ import dotenv from "dotenv";
 dotenv.config(); // Load API key from .env file
 
 const app = express();
-app.use(cors()); // Allow frontend requests
+app.use(cors({ origin: '*' })); // Allow frontend requests
 app.use(express.json());
 const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY, // Secure API key loading
